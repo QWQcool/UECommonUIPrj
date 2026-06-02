@@ -2,10 +2,15 @@
 
 
 #include "Widgets/Widget_PrimaryLayout.h"
+#include "FrontendDebugHelper.h"
 
 UCommonActivatableWidgetContainerBase* UWidget_PrimaryLayout::FindWidgetStackByTag(const FGameplayTag& InTag) const
 {
-	checkf(RegisteredWidgetStackMap.Contains(InTag), TEXT("Widget stack with tag %s not found"), *InTag.ToString());
+	if (!RegisteredWidgetStackMap.Contains(InTag))
+	{
+		ensureMsgf(false, TEXT("Widget stack with tag %s not found"), *InTag.ToString());
+		return nullptr;
+	}
 	
 	return RegisteredWidgetStackMap.FindRef(InTag);
 }
@@ -17,6 +22,8 @@ void UWidget_PrimaryLayout::RegisterWidgetStack(UPARAM(meta = (Categories = "Fro
 		if (!RegisteredWidgetStackMap.Contains(StackTag))
 		{
 			RegisteredWidgetStackMap.Add(StackTag, Container);
+
+			// Debug::Print(TEXT("Widget Stack Registered under the tag: ") + StackTag.ToString());
 		}
 	}
 }
