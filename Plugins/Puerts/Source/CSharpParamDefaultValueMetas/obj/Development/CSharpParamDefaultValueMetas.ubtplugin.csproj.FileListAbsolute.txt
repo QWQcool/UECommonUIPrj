@@ -1,0 +1,12 @@
+C:\UE\UECommonUIPrj\Binaries\DotNET\UnrealBuildTool\Plugins\CSharpParamDefaultValueMetas\CSharpParamDefaultValueMetas.deps.json
+C:\UE\UECommonUIPrj\Binaries\DotNET\UnrealBuildTool\Plugins\CSharpParamDefaultValueMetas\CSharpParamDefaultValueMetas.dll
+C:\UE\UECommonUIPrj\Binaries\DotNET\UnrealBuildTool\Plugins\CSharpParamDefaultValueMetas\ref\CSharpParamDefaultValueMetas.dll
+C:\UE\UECommonUIPrj\Binaries\DotNET\UnrealBuildTool\Plugins\CSharpParamDefaultValueMetas\CSharpParamDefaultValueMetas.pdb
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\CSharpParamDefaultValueMetas.ubtplugin.csproj.AssemblyReference.cache
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\CSharpParamDefaultValueMetas.ubtplugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\CSharpParamDefaultValueMetas.ubtplugin.csproj.CoreCompileInputs.cache
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\CSharpParamDefaultValueMetas.ubtplugin.sourcelink.json
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\CSharpPa.E71C88CE.Up2Date
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\CSharpParamDefaultValueMetas.dll
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\refint\CSharpParamDefaultValueMetas.dll
+C:\UE\UECommonUIPrj\Plugins\Puerts\Source\CSharpParamDefaultValueMetas\obj\Development\CSharpParamDefaultValueMetas.pdb
