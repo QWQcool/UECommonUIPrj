@@ -74,6 +74,8 @@ Plugins/*/Saved/
 Plugins/*/Saved/
 Plugins/*/Intermediate/
 Plugins/*/Binaries/
+Plugins/*/obj/
+Plugins/*/Source/*/obj/
 
 # Mac OS X
 .DS_Store
