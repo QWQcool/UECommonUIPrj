@@ -12479,4 +12479,33 @@ declare module "ue" {
     }
 
 // __TYPE_DECL_END
+// __TYPE_DECL_START: 8cada616b2af209064b335635e32853948b0d507
+    namespace Game.UI.BP_FrontendController {
+        class BP_FrontendController_C extends UE.FrontendPlayerController {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): BP_FrontendController_C;
+            static Load(InName: string): BP_FrontendController_C;
+        
+            __tid_BP_FrontendController_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
+// __TYPE_DECL_START: d8edc365c0fde6c90e83fd90b8e58d55ac799a52
+    namespace Game.UI.BP_FrontendGameMode {
+        class BP_FrontendGameMode_C extends UE.GameModeBase {
+            constructor(Outer?: Object, Name?: string, ObjectFlags?: number);
+            DefaultSceneRoot: UE.SceneComponent;
+            static StaticClass(): Class;
+            static Find(OrigInName: string, Outer?: Object): BP_FrontendGameMode_C;
+            static Load(InName: string): BP_FrontendGameMode_C;
+        
+            __tid_BP_FrontendGameMode_C_0__: boolean;
+        }
+        
+    }
+
+// __TYPE_DECL_END
 }
