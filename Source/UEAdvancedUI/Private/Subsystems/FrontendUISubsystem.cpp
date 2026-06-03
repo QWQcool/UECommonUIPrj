@@ -2,7 +2,14 @@
 
 
 #include "Subsystems/FrontendUISubsystem.h"
+#include "Engine/AssetManager.h"
+#include "Widgets/Widget_ActivatableBase.h"
+
 #include "FrontendDebugHelper.h"
+#include "Widgets/Widget_PrimaryLayout.h"
+
+// CommonUI 模块头文件
+#include "Widgets/CommonActivatableWidgetContainer.h"
 
 UFrontendUISubsystem* UFrontendUISubsystem::Get(const UObject* WorldContextObject)
 {
@@ -48,4 +55,37 @@ void UFrontendUISubsystem::RegisterCreatedPrimaryLayout(UWidget_PrimaryLayout* I
 	CreatedPrimaryLayout = InCreateWidget;
 
 	Debug::Print(TEXT("Primary Layout Registered"));
+}
+
+void UFrontendUISubsystem::PushSoftWidgetToStackAsync(const FGameplayTag& InWidgetStackTag,
+	TSoftClassPtr<UWidget_ActivatableBase> InSoftWidgetClass,
+	TFunction<void(EAsyncPushWidgetState, UWidget_ActivatableBase*)> AsyncPushStateCallback)
+{
+	if (InSoftWidgetClass.IsNull())
+	{
+		ensureMsgf(false, TEXT("PushSoftWidgetToStackAsync: InSoftWidgetClass is null"));
+		return;
+	}
+
+	UAssetManager::Get().GetStreamableManager().RequestAsyncLoad(
+		InSoftWidgetClass.ToSoftObjectPath(),
+		FStreamableDelegate::CreateLambda(
+			[InSoftWidgetClass, this, InWidgetStackTag, AsyncPushStateCallback]()
+		{
+			UClass* LoadWidgetClass = InSoftWidgetClass.Get();
+			if (LoadWidgetClass && CreatedPrimaryLayout)
+			{
+				// TODO: Create and push widget
+				UCommonActivatableWidgetContainerBase* FoundWidgetStack = CreatedPrimaryLayout->FindWidgetStackByTag(InWidgetStackTag);
+				UWidget_ActivatableBase* CreatedWidget = FoundWidgetStack->AddWidget<UWidget_ActivatableBase>(
+					LoadWidgetClass,
+					[AsyncPushStateCallback](UWidget_ActivatableBase& CreateWidgetInstance)
+					{ 
+						AsyncPushStateCallback(EAsyncPushWidgetState::OnCreatedBeforePush, &CreateWidgetInstance);
+					}
+					);
+				AsyncPushStateCallback(EAsyncPushWidgetState::AfterPush, CreatedWidget);
+			}
+		})
+	);
 }

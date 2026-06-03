@@ -7,6 +7,14 @@
 #include "FrontendUISubsystem.generated.h"
 
 class UWidget_PrimaryLayout;
+struct FGameplayTag;
+class UWidget_ActivatableBase;
+
+enum class EAsyncPushWidgetState : uint8
+{
+	OnCreatedBeforePush,
+	AfterPush,
+};
 /**
  * 
  */
@@ -24,6 +32,11 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void RegisterCreatedPrimaryLayout(UWidget_PrimaryLayout* InCreateWidget);
+
+	void PushSoftWidgetToStackAsync(const FGameplayTag& InWidgetStackTag,
+		TSoftClassPtr<UWidget_ActivatableBase> InSoftWidgetClass,
+		TFunction<void(EAsyncPushWidgetState, UWidget_ActivatableBase*)> AsyncPushStateCallback);
+	
 private:
 	UPROPERTY(Transient)
 	UWidget_PrimaryLayout* CreatedPrimaryLayout;
