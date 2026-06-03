@@ -20,7 +20,8 @@ public class UEAdvancedUI : ModuleRules
 			"GameplayTags",
 			"UMG",           // 添加UMG模块，用于UWidget、UUserWidget等UI类
 			"Slate",         // 添加Slate模块
-			"SlateCore"      // 添加SlateCore模块
+			"SlateCore",     // 添加SlateCore模块
+			"CommonUI"       // 添加CommonUI模块，包含UCommonActivatableWidgetContainerBase
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });

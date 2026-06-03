@@ -12,7 +12,7 @@ class UCommonActivatableWidgetContainerBase;
 /**
  * 
  */
-UCLASS(Abstract, BlueprintType, meta = (DisableNaiveTIck))
+UCLASS(Abstract, BlueprintType, meta = (DisableNaiveTick))
 class UEADVANCEDUI_API UWidget_PrimaryLayout : public UCommonUserWidget
 {
 	GENERATED_BODY()
