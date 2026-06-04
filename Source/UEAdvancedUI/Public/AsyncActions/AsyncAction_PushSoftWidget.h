@@ -22,7 +22,7 @@ class UEADVANCEDUI_API UAsyncAction_PushSoftWidget : public UBlueprintAsyncActio
 
 public:
 	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject",HidePin = "WorldContextObject",BlueprintInternalUseOnly = "true",DisplayName = "PushSoftWidget To Widget Stack"))
-	UAsyncAction_PushSoftWidget* PushSoftWidget(
+	static UAsyncAction_PushSoftWidget* PushSoftWidget(
 		const UObject* WorldContextObject,
 		APlayerController *OwningPlayerController,
 		TSoftClassPtr<UWidget_ActivatableBase> InSoftWidgetClass,
