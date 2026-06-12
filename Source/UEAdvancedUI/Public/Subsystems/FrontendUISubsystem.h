@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "FrontendTypes/FrontendEnumTypes.h"
 #include "FrontendUISubsystem.generated.h"
 
 class UWidget_PrimaryLayout;
@@ -40,6 +41,8 @@ public:
 	void PushSoftWidgetToStackAsync(const FGameplayTag& InWidgetStackTag,
 		TSoftClassPtr<UWidget_ActivatableBase> InSoftWidgetClass,
 		TFunction<void(EAsyncPushWidgetState, UWidget_ActivatableBase*)> AsyncPushStateCallback);
+
+	void PushConfirmScreenToModalStackAynsc(EConfirmScreenType InScreenType, const FText& InScreenTitle, const FText& InScreenMsg, TFunction<void(EConfirmScreenButtonType)> ButtonClickedCallback);
 
 	UPROPERTY(BlueprintAssignable)
 	FOnButtonDescriptionTextUpdatedDelegate OnButtonDescriptionTextUpdated;
