@@ -21,7 +21,8 @@ public class UEAdvancedUI : ModuleRules
 			"UMG",           // 添加UMG模块，用于UWidget、UUserWidget等UI类
 			"Slate",         // 添加Slate模块
 			"SlateCore",     // 添加SlateCore模块
-			"CommonUI"       // 添加CommonUI模块，包含UCommonActivatableWidgetContainerBase
+			"CommonUI",      // 添加CommonUI模块，包含UCommonActivatableWidgetContainerBase
+			"CommonInput"    // 添加CommonInput模块，用于GetDefaultClickAction和GetDefaultBackAction
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
